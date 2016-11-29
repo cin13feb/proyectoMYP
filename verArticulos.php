@@ -24,22 +24,12 @@
 	 #pie {
 	 	font-size: 10px;
 	 }
-
-	
-
-	 
-	 /*
-	 #parrafo {
-	 	background-color: green;
-	 	border: 3px red dotted;
-	 	padding:100px;
-	 	margin-top:100px;
-
-
-	 } */
-
 	</style>
-
+	<script>
+    function aviso() {
+     	 alert("Articulo agregado al carrito");
+  	}
+  	</script>
 
 
 </head>
@@ -84,6 +74,7 @@
 		$cant_ch=$row["ch"];
 		$cant_m=$row["m"];
 		$cant_g=$row["g"];
+		$cb=$row["codigoBarras"];
 		echo "<img src=\"administrador/ropa/$im \" width='100' height='100' />";
 		echo "<br>";
 		echo "Precio $".$precio;
@@ -94,6 +85,10 @@
 		echo "<br>";
 		echo "Tallas G ". $cant_g;
 		echo "<br>";
+		if(isset($_COOKIE['nombreUsuario'])) {
+           	echo "<a href='agregar.php?codigo=$cb' onclick='aviso()'>Agregar al carrito</a>";
+          	echo "<br>";
+		}
 	}
 	?>
 

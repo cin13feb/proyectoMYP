@@ -63,12 +63,22 @@
 		<tr>
 			<td id='lista1'>Inicio | </td>
 			<td id='lista2'><a href='registro.php' >Registrate | </a></td>
-			<td id='lista3'>Inicia sesión  | </td>
+			<td id='lista3'><a href='inicio.php' >Inicia sesión  | </a></td>
 			<td id='lista4'><a href="ropaH.php"> Hombre | </a></td>
 			<td id='lista5'><a href='ropaM.php' >Mujer  </a>|</td>
 			<td id='lista6'><td><a href='ubicacion.php' >Ubicación </a></td>
 		</tr>
 	</table>
+	<?php	
+			if(isset($_COOKIE['nombreUsuario'])) {
+					echo "BIENVENIDO ".$_COOKIE['nombreUsuario'];
+					echo "<a href='verCarrito.php'><img src='imagenes/carrito.png' width='50' height='50' /></a>";
+					echo "<a href='salir2.php'>Cerrar sesión</a>";
+		
+			}
+			echo "<br>";
+		?>
+
 
 	<img id='fondo' src="imagenes/fondo.jpg" width="400" height="200">
 
